@@ -1,0 +1,146 @@
+:root {
+  --underweight: orange;
+  --normal: green;
+  --overweight: lightcoral;
+  --obese: crimson;
+  --primary-color: #00a1a3;
+  --secondary-color: #444;
+  --background-color: #004d4d;
+  --container-bg-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Jost", sans-serif;
+}
+
+body {
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background: var(--container-bg-color);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+}
+
+.calculator {
+  display: grid;
+  gap: 1rem;
+}
+
+.calculator div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calculator label {
+  font-weight: 600;
+  color: slategray;
+}
+
+.calculator input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  outline-color: var(--primary-color);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.calculator button {
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  background: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+}
+
+.calculator button[type="reset"] {
+  background: var(--secondary-color);
+}
+
+.calculator button:hover {
+  background: darken(var(--primary-color), 10%);
+}
+
+.output {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.output #bmi {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.output #desc {
+  font-size: 1.25rem;
+  color: slategray;
+}
+
+.bmi-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.bmi-scale div {
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  border-top: 5px solid var(--color);
+  padding: 10px;
+  font-size: 0.875rem;
+}
+
+.bmi-scale h4 {
+  font-size: 0.75rem;
+  color: slategray;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .calculator button {
+    padding: 8px;
+    font-size: 0.875rem;
+  }
+
+  .output #bmi {
+    font-size: 2.5rem;
+  }
+
+  .bmi-scale {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bmi-scale div {
+    border-top-width: 3px;
+  }
+}
